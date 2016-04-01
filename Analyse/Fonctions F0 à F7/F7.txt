@@ -1,0 +1,6 @@
+
+Vérification des données -> RAS
+
+Procedure
+A chaque période donnée, appel de AFFICHAGE_FACTURE
+NB_HEURE_VOL = CPTARR - CPTDEP
