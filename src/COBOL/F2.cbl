@@ -18,7 +18,7 @@ DATA DIVISION.
             10  WS_CURR_SECOND  PIC  9(2).
             10  WS_CURR_MS      PIC  9(2).
         05  WS_DIFF_FROM_GMT    PIC S9(4).
-    77  WS_FUNC     PIC X(25)   VALUE "ENREGISTREMENT DE VOL".
+    77  WS_FUNC     PIC X(25)   VALUE "ENREGISTREMENT VOL".
     77  WS_LINE     PIC X(80)   VALUE "________________________________________________________________________________".
     77  WS_MTITLE   PIC X(80)   VALUE "Veuillez choisir parmis les options suivantes : ".
     77  WS_MBACK    PIC X(80)   VALUE "    M - Retourner au menu principal.".
