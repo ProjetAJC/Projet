@@ -89,17 +89,15 @@ PGM_F2.
         ELSE
             EVALUATE WS_CHOICE
                 WHEN SPACES
-                    
+                    MOVE SPACES TO WS_MSG.
                 WHEN "M" 
-                    MOVE SPACES TO WS_CHOICE
                     MOVE 0 TO WS_CONTINUE 
                 WHEN "Q" 
-                    MOVE SPACES TO WS_CHOICE
                     MOVE 0 TO WS_CONTINUE, LS_CONTINUE
                 WHEN OTHER 
-                    MOVE SPACES TO WS_CHOICE
                     MOVE "Option invalide." TO WS_MSG
             END-EVALUATE
+            MOVE SPACES TO WS_CHOICE
         END-IF
     END-PERFORM.
 END_F2.
