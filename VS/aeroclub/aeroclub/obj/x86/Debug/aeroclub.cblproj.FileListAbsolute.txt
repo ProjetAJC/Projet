@@ -1,0 +1,3 @@
+C:\Users\jerem\OneDrive\Documents\GitHub\Projet\VS\aeroclub\aeroclub\bin\x86\Debug\aeroclub.exe
+C:\Users\jerem\OneDrive\Documents\GitHub\Projet\VS\aeroclub\aeroclub\obj\x86\Debug\aeroclub.exe
+C:\Users\jerem\OneDrive\Documents\GitHub\Projet\VS\aeroclub\aeroclub\obj\x86\Debug\aeroclub.cblprojResolveAssemblyReference.cache
