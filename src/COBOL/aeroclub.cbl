@@ -18,17 +18,17 @@ DATA DIVISION.
             10  WS_CURR_SECOND  PIC  9(2).
             10  WS_CURR_MS      PIC  9(2).
         05  WS_DIFF_FROM_GMT    PIC S9(4).
-    77  WS_FUNC     PIC X(25)   VALUE "MAIN MENU".
+    77  WS_FUNC     PIC X(25)   VALUE "MENU PRINCIPAL".
     77  WS_LINE     PIC X(80)   VALUE "________________________________________________________________________________".
     77  WS_MTITLE   PIC X(80)   VALUE "Veuillez choisir parmis les options suivantes : ".
-    77  WS_MENUF0   PIC X(80)   VALUE "    F0 - Liste des avions à réviser et des pilotes malades.".
-    77  WS_MENUF1   PIC X(80)   VALUE "    F1 - Dépôt d'un plan de vol.".
-    77  WS_MENUF2   PIC X(80)   VALUE "    F2 - Enregistrement d'un vol.".
-    77  WS_MENUF3   PIC X(80)   VALUE "    F3 - Mise-à-jour des pilotes.".
-    77  WS_MENUF4   PIC X(80)   VALUE "    F4 - Mise-à-jour des avions.".
-    77  WS_MENUF5   PIC X(80)   VALUE "    F5 - Récapitulatif des avions.".
-    77  WS_MENUF6   PIC X(80)   VALUE "    F6 - Récapitulatif des pilotes.".
-    77  WS_MENUF7   PIC X(80)   VALUE "    F7 - Facturation des vols aux pilotes.".
+    77  WS_MENUF0   PIC X(80)   VALUE "    0 - Liste des avions à réviser et des pilotes malades.".
+    77  WS_MENUF1   PIC X(80)   VALUE "    1 - Dépôt d'un plan de vol.".
+    77  WS_MENUF2   PIC X(80)   VALUE "    2 - Enregistrement d'un vol.".
+    77  WS_MENUF3   PIC X(80)   VALUE "    3 - Mise-à-jour des pilotes.".
+    77  WS_MENUF4   PIC X(80)   VALUE "    4 - Mise-à-jour des avions.".
+    77  WS_MENUF5   PIC X(80)   VALUE "    5 - Récapitulatif des avions.".
+    77  WS_MENUF6   PIC X(80)   VALUE "    6 - Récapitulatif des pilotes.".
+    77  WS_MENUF7   PIC X(80)   VALUE "    7 - Facturation des vols aux pilotes.".
     77  WS_MQUIT    PIC X(80)   VALUE "    Q - Quitter l'application.".
     77  WS_MSG      PIC X(50)   VALUE SPACES.
     77  WS_INVITE   PIC X(50)   VALUE SPACES.
@@ -42,8 +42,8 @@ DATA DIVISION.
         02  LINE 3  COL 8 PIC 9(2) FROM WS_CURR_MONTH.
         02  LINE 3  COL 10 VALUE "/".
         02  LINE 3  COL 11 PIC 9(4) FROM WS_CURR_YEAR.
-        02  LINE 3  COL 30 VALUE "GESTION AEROCLUB".
-        02  LINE 3  COL 50 PIC X(25) FROM WS_FUNC.
+        02  LINE 3  COL 32 VALUE "GESTION AEROCLUB".
+        02  LINE 3  COL 66 PIC X(25) FROM WS_FUNC.
         02  LINE 6  COL 1 PIC X(80) FROM WS_LINE.
         02  LINE 8  COL 1 PIC X(80) FROM WS_MTITLE.
         02  LINE 9  COL 1 PIC X(80) FROM WS_MENUF0.
