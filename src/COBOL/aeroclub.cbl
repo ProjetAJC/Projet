@@ -1,11 +1,14 @@
 IDENTIFICATION DIVISION.
 PROGRAM-ID. AEROCLUB.
 AUTHOR. HUGO SARACINO.
+
 ENVIRONMENT DIVISION.
     CONFIGURATION SECTION.
     INPUT-OUTPUT SECTION.
+
 DATA DIVISION.
     FILE SECTION.
+
     WORKING-STORAGE SECTION.
     01  WS_CURR_DATE_FIELDS.
         05  WS_CURR_DATE.
@@ -21,27 +24,28 @@ DATA DIVISION.
     77  WS_FUNC     PIC X(25)   VALUE "MENU PRINCIPAL".
     77  WS_LINE     PIC X(80)   VALUE "________________________________________________________________________________".
     77  WS_MTITLE   PIC X(80)   VALUE "Veuillez choisir parmis les options suivantes : ".
-    77  WS_MENUF0   PIC X(80)   VALUE "    0 - Liste des avions à réviser et des pilotes malades.".
-    77  WS_MENUF1   PIC X(80)   VALUE "    1 - Dépôt d'un plan de vol.".
+    77  WS_MENUF0   PIC X(80)   VALUE "    0 - Liste des avions a reviser et des pilotes malades.".
+    77  WS_MENUF1   PIC X(80)   VALUE "    1 - Depot d'un plan de vol.".
     77  WS_MENUF2   PIC X(80)   VALUE "    2 - Enregistrement d'un vol.".
-    77  WS_MENUF3   PIC X(80)   VALUE "    3 - Mise-à-jour des pilotes.".
-    77  WS_MENUF4   PIC X(80)   VALUE "    4 - Mise-à-jour des avions.".
-    77  WS_MENUF5   PIC X(80)   VALUE "    5 - Récapitulatif des avions.".
-    77  WS_MENUF6   PIC X(80)   VALUE "    6 - Récapitulatif des pilotes.".
+    77  WS_MENUF3   PIC X(80)   VALUE "    3 - Mise-a-jour des pilotes.".
+    77  WS_MENUF4   PIC X(80)   VALUE "    4 - Mise-a-jour des avions.".
+    77  WS_MENUF5   PIC X(80)   VALUE "    5 - Recapitulatif des avions.".
+    77  WS_MENUF6   PIC X(80)   VALUE "    6 - Recapitulatif des pilotes.".
     77  WS_MENUF7   PIC X(80)   VALUE "    7 - Facturation des vols aux pilotes.".
     77  WS_MQUIT    PIC X(80)   VALUE "    Q - Quitter l'application.".
     77  WS_MSG      PIC X(50)   VALUE SPACES.
     77  WS_INVITE   PIC X(50)   VALUE SPACES.
     77  WS_CHOICE   PIC X       VALUE SPACES.
     77  WS_CONTINUE PIC 9.
+
     SCREEN SECTION.
     01  CLRSCREEN BLANK SCREEN.
     01  STDSCREEN BACKGROUND-COLOR 0 FOREGROUND-COLOR 2.
-        02  LINE 3  COL 5 PIC 9(2) FROM WS_CURR_DAY.
-        02  LINE 3  COL 7 VALUE "/".
-        02  LINE 3  COL 8 PIC 9(2) FROM WS_CURR_MONTH.
-        02  LINE 3  COL 10 VALUE "/".
-        02  LINE 3  COL 11 PIC 9(4) FROM WS_CURR_YEAR.
+        02  LINE 3  COL 1  PIC 9(2) FROM WS_CURR_DAY.
+        02  LINE 3  COL 3  VALUE "/".
+        02  LINE 3  COL 4  PIC 9(2) FROM WS_CURR_MONTH.
+        02  LINE 3  COL 6  VALUE "/".
+        02  LINE 3  COL 7  PIC 9(4) FROM WS_CURR_YEAR.
         02  LINE 3  COL 32 VALUE "GESTION AEROCLUB".
         02  LINE 3  COL 66 PIC X(25) FROM WS_FUNC.
         02  LINE 6  COL 1 PIC X(80) FROM WS_LINE.
@@ -59,15 +63,17 @@ DATA DIVISION.
         02  LINE 18 COL 10 PIC X USING WS_CHOICE.
         02  LINE 19 COL 1 PIC X(80) FROM WS_LINE.
         02  LINE 20 COL 1 PIC X(50) FROM WS_MSG.
+
 PROCEDURE DIVISION.
 PRINCIPAL SECTION.
-PGM_AEROCLUB.
     MOVE FUNCTION CURRENT-DATE TO WS_CURR_DATE_FIELDS.
     MOVE 1 TO WS_CONTINUE.
+
     PERFORM UNTIL WS_CONTINUE = 0
         DISPLAY CLRSCREEN
         DISPLAY STDSCREEN
         ACCEPT STDSCREEN
+
         EVALUATE WS_CHOICE
             WHEN "0"
                 MOVE SPACES TO WS_CHOICE
@@ -100,6 +106,7 @@ PGM_AEROCLUB.
                 MOVE SPACES TO WS_CHOICE
                 MOVE "Option invalide." TO WS_MSG
         END-EVALUATE
+
     END-PERFORM.
-END_AEROCLUB.
+
     STOP RUN.
