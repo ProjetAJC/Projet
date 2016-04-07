@@ -1,5 +1,5 @@
 IDENTIFICATION DIVISION.
-PROGRAM-ID. HELLO-WORLD.
+PROGRAM-ID. F4.
 
 ENVIRONMENT DIVISION.
 INPUT-OUTPUT SECTION.
@@ -11,6 +11,9 @@ DATA DIVISION.
 FILE SECTION.
 
 WORKING-STORAGE SECTION.
+77 VALIDE PIC A.
+77 NUM-AVION-MAJ PIC 9(3).
+77 NUM-AVION-DEL PIC 9(3).
 01 FAVION.
 	02 AVION OCCURS 5.
 		03 CODAV PIC 9(3).
@@ -81,70 +84,85 @@ SCREEN SECTION.
 PROCEDURE DIVISION.
 
 MENU.
-DISPLAY CLRSCREEN.
-DISPLAY STDSCREEN.
-DISPLAY "F4" LINE 2 COL 5.
-DISPLAY "1. Afficher la liste des avions" LINE 6 COL 5.
-DISPLAY "2. Ajouter un avion" LINE 7 COL 5.
-DISPLAY "3. Modifier un avion" LINE 8 COL 5.
-DISPLAY "4. Supprimer un avion" LINE 9 COL 5.
-DISPLAY "5. Revenir au menu principal" LINE 10 COL 5.
-DISPLAY "6. Quitter le programme" LINE 11 COL 5.
-ACCEPT WS-CHOIX.
-IF WS-CHOIX=1 THEN
-    PERFORM LISTE-AVION
-END-IF.
-IF WS-CHOIX=2 THEN
-    PERFORM MENU-CRE-AVION
-END-IF.
-IF WS-CHOIX=3 THEN
-    PERFORM MENU-MAJ-AVION
-END-IF.
-IF WS-CHOIX=4 THEN
-    PERFORM MENU-DEL-AVION
-END-IF.
+    DISPLAY CLRSCREEN.
+    DISPLAY STDSCREEN.
+    DISPLAY "F4" LINE 5 COL 5.
+    DISPLAY "1. Afficher la liste des avions" LINE 6 COL 5.
+    DISPLAY "2. Ajouter un avion" LINE 7 COL 5.
+    DISPLAY "3. Modifier un avion" LINE 8 COL 5.
+    DISPLAY "4. Supprimer un avion" LINE 9 COL 5.
+    DISPLAY "5. Revenir au menu principal" LINE 10 COL 5.
+    DISPLAY "6. Quitter le programme" LINE 11 COL 5.
+    ACCEPT WS-CHOIX.
+    IF WS-CHOIX=1 THEN
+        PERFORM LISTE-AVION
+    END-IF.
+    IF WS-CHOIX=2 THEN
+        PERFORM MENU-CRE-AVION
+    END-IF.
+    IF WS-CHOIX=3 THEN
+        PERFORM MENU-MAJ-AVION
+    END-IF.
+    IF WS-CHOIX=4 THEN
+        PERFORM MENU-DEL-AVION
+    END-IF.
 
 
 INFOS-AVION.
-DISPLAY "Information sur l'avion".
+    DISPLAY "Information sur l'avion".
 
 
 LISTE-AVION.
-DISPLAY "Liste des avions" LINE 1 COL 30.
-DISPLAY "Selectionner un avion"
-ACCEPT WS-AVION-SELECT.
-PERFORM INFOS-AVION.
+    DISPLAY "Liste des avions" LINE 1 COL 30.
+    DISPLAY "Selectionner un avion"
+    ACCEPT WS-AVION-SELECT.
+    PERFORM INFOS-AVION.
 
 
 MENU-CRE-AVION.
-DISPLAY "Ajouter un avion" LINE 1 COL 30.
-DISPLAY "Infos: "
-ACCEPT WS-NEW-INFOS.
-DISPLAY "Compteur horaire: "
-ACCEPT WS-NEW-CPTHORAV.
-DISPLAY "Type de l'avion: "
-ACCEPT WS-NEW-CODTYP.
-DISPLAY ": "
-ACCEPT WS-NEW-INFOS.
-MOVE 0 TO WS-NEW-CPTINTER.
-	
+    DISPLAY CLRSCREEN.
+    DISPLAY "Ajouter un avion" LINE 1 COL 30.
+    DISPLAY "Infos: " LINE 7 COL 1.
+    DISPLAY "Compteur horaire: " LINE 8 COL 1.
+    DISPLAY "Type de l'avion: " LINE 9 COL 1.
+    ACCEPT WS-NEW-INFOS LINE 7 COL 25.
+    ACCEPT WS-NEW-CPTHORAV LINE 8 COL 25.
+    ACCEPT WS-NEW-CODTYP LINE 9 COL 25.
+    MOVE 0 TO WS-NEW-CPTINTER.
+    DISPLAY "Valider la création d'un avion. (y/n)" LINE 21 COL 1.
+    ACCEPT VALIDE LINE 22 COL 1.
+    IF VALIDE = 'y'
+        DISPLAY "Avion créé" LINE 21 COL 1
+    ELSE
+        IF VALIDE = 'n'
+            DISPLAY "Avion non créé" LINE 21 COL 1
+        ELSE
+            DISPLAY "Erreur, commande invalide" LINE 20 COL 1
+        END-IF
+    END-IF.
 	
 MENU-MAJ-AVION.
-DISPLAY "Modifier un avion" LINE 1 COL 30.
-ACCEPT WS-CHOIX.
+    DISPLAY CLRSCREEN.
+    DISPLAY "Modifier un avion" LINE 1 COL 30.
+    DISPLAY "Avion à modifier:" LINE 21 COL 1.
+    ACCEPT NUM-AVION-MAJ.
+    PERFORM INFOS-AVION.
+    DISPLAY "Valider la modification (y/n)?".
+    
+    ACCEPT WS-CHOIX.
 	
 
 MENU-DEL-AVION.
-DISPLAY CLEARBODY.
-DISPLAY "Supprimer un avion" LINE 1 COL 30.
-ACCEPT WS-DEL-AVION.
-DISPLAY "Avion supprimé" LINE 15 COL 1.
-DISPLAY "1. Retourner au menu".
-DISPLAY "2. Quitter".
-ACCEPT WS-CHOIX.
-GO TO MENU QUIT DEPENDING ON WS-CHOIX.
+    DISPLAY CLEARBODY.
+    DISPLAY "Supprimer un avion" LINE 1 COL 30.
+    DISPLAY "Avion à supprimer:" LINE 21 COL 1.
+    ACCEPT NUM-AVION-DEL LINE 22 COL.
+    DISPLAY "Avion supprimé" LINE 21 COL 1.
+    DISPLAY "1. Retourner au menu  2. Quitter" LINE 21 COL 1.
+    ACCEPT WS-CHOIX.
+    GO TO MENU QUIT DEPENDING ON WS-CHOIX.
 
 
 QUIT.
-STOP RUN.
+    STOP RUN.
 
