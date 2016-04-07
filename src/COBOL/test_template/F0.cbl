@@ -7,17 +7,6 @@ ENVIRONMENT DIVISION.
 DATA DIVISION.
     FILE SECTION.
     WORKING-STORAGE SECTION.
-    01  WS_CURR_DATE_FIELDS.
-        05  WS_CURR_DATE.
-            10  WS_CURR_YEAR    PIC  9(4).
-            10  WS_CURR_MONTH   PIC  9(2).
-            10  WS_CURR_DAY     PIC  9(2).
-        05  WS_CURR_TIME.
-            10  WS_CURR_HOUR    PIC  9(2).
-            10  WS_CURR_MINUTE  PIC  9(2).
-            10  WS_CURR_SECOND  PIC  9(2).
-            10  WS_CURR_MS      PIC  9(2).
-        05  WS_DIFF_FROM_GMT    PIC S9(4).
     77  WS_FUNC     PIC X(25)   VALUE "LISTE AVIONS/PILOTES".
     77  WS_LINE     PIC X(80)   VALUE "________________________________________________________________________________".
     77  WS_MTITLE   PIC X(80)   VALUE "Veuillez choisir parmis les options suivantes : ".
@@ -53,3 +42,4 @@ PGM_F0.
     END-PERFORM.
 END_F0.
     STOP RUN.
+END PROGRAM FO
