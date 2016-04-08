@@ -9,8 +9,8 @@
         FILE SECTION.
         WORKING-STORAGE SECTION.
 
-            77 WS-APP PIC X(20) VALUE "F7".
-            77 WS-FUNC PIC X(20) VALUE "F7".
+            77 WS-APP PIC X(20) VALUE "F3".
+            77 WS-FUNC PIC X(20) VALUE "F3".
             77 WS-MSG PIC X(60).
             77 WS-INVITE PIC X(60).
             77 WS-CHOIX PIC X(20).
