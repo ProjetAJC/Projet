@@ -1,0 +1,51 @@
+
+
+ JJ/MM/AAAA                    GESTION AEROCLUB               DEPOT PLAN DE VOL
+
+
+-------------------------------------------------------------------------------
+
+ Page d'enregistrement des plans de vol.
+	 1 - Saisissez le numero du pilote
+	 2 - Entrez les données du plan de vol
+	 3 - Validez les informations
+
+
+
+ Options de navigation :
+	 M - Retourner au menu principal.
+	 Q - Quitter l'application.
+_
+-------------------------------------------------------------------------------
+[Option invalide]
+Veuillez entrer blablabla.
+000
+
+
+
+
+===============================================================================
+
+
+
+
+
+ JJ/MM/AAAA                    GESTION AEROCLUB               DEPOT PLAN DE VOL
+
+
+-------------------------------------------------------------------------------
+ 
+ Numero du pilote : 000
+ Date de depart   : 00/00/0000                  Heure de depart : 00:00
+ Date d'arrivee   : 00/00/0000                  Heure d'arrivee : 00:00
+ Destination      : _________________________
+ Type d'avion     : __
+ 
+ Options de navigation :
+	 V - Valider les informations
+	 M - Retourner au menu principal.
+	 Q - Quitter l'application.
+_
+-------------------------------------------------------------------------------
+[Option invalide]
+
