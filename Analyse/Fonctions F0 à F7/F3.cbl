@@ -22,7 +22,7 @@
 		        02 ADRESSE-PILOTE PIC X(50).
                 02 ETAT-PILOTE PIC AAA.
 
-	        77 VALIDE PIC A.
+	        77 VALIDE PIC X.
 	        77 NUM-PILOTE-MAJ PIC 9(3).
 	        77 DEL-PILOTE-MAJ PIC 9(3).
 
@@ -119,12 +119,12 @@
             ACCEPT NEW-BREVET LINE 12 COL 15.
             DISPLAY "Valider la création d'un pilote. (y/n)" LINE 21 COL 1.
       *     ACCEPT VALIDE LINE 22.
-            accept WS-CHOIX.
-            IF WS-CHOIX = 'y'
+            accept VALIDE line 22.
+            IF VALIDE = 'y'
                 move "Pilote créé" to WS-MSG
       *         DISPLAY "Pilote créé" LINE 21 COL 1
             ELSE
-                IF WS-CHOIX = 'n'
+                IF VALIDE = 'n'
                     move "Pilote non créé" to WS-MSG
       *             DISPLAY "Pilote non créé" LINE 21 COL 1
                 ELSE
@@ -151,20 +151,18 @@
             CALL 'UTIL' USING WS-APP, WS-FUNC, WS-MSG, WS-INVITE, WS-CHOIX.
 
       *     DISPLAY "Valider la modification d'un pilote. (y/n)" LINE 21 COL 1.
-      *     ACCEPT VALIDE LINE 22 COL 9.
-            accept WS-CHOIX.
-            IF WS-CHOIX = 'y'
-      *         DISPLAY "Pilote modifié" LINE 21 COL 1
+            ACCEPT VALIDE LINE 22 COL 9.
+      *     accept WS-CHOIX.
+            IF VALIDE = 'y'
                 move "Pilote modifié" to WS-MSG
             ELSE
-                IF WS-CHOIX = 'n'
-      *             DISPLAY "Pilote non modifié" LINE 21 COL 1
+                IF VALIDE = 'n'
                     move "Pilote non modifié" to WS-MSG
                 ELSE
-      *             DISPLAY "Erreur, commande invalide" LINE 20 COL 1
                     move "Erreur, commande invalide" to WS-MSG
                 END-IF
             END-IF.
+            CALL 'UTIL' USING WS-APP, WS-FUNC, WS-MSG, WS-INVITE, WS-CHOIX.
             PERFORM MENU.
 
   
@@ -239,7 +237,7 @@
             MOVE LS-FUNC TO WS-FUNC.
             MOVE LS-MSG TO WS-MSG.
             MOVE LS-INVITE TO WS-INVITE.
-            MOVE LS-CHOIX TO WS-CHOIX.
+      *     MOVE LS-CHOIX TO WS-CHOIX.
             DISPLAY STDSCREEN.
     
         EXIT PROGRAM.
