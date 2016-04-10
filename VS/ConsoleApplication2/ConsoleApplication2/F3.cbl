@@ -87,7 +87,7 @@
 
            01 SS-CRE-PILOTE.
                02 LINE 7  COL 1 VALUE "Nom: ".
-               02 LINE 8  COL 1 VALUE "PrÃ©nom: ".
+               02 LINE 8  COL 1 VALUE "Prénom: ".
                02 LINE 9  COL 1 VALUE "Adresse: ".
                02 LINE 10 COL 1 VALUE "CP: ".
                02 LINE 11 COL 1 VALUE "Ville: ".
@@ -108,7 +108,7 @@
            
            01 DS-MAJ-PILOTE.
                02 LINE 7  COL 1 FROM "Nom: ".
-               02 LINE 8  COL 1 "PrÃ©nom: ".
+               02 LINE 8  COL 1 "Prénom: ".
                02 LINE 9  COL 1 "Adresse: ".
                02 LINE 10 COL 1 VALUE "CP: ".
                02 LINE 11 COL 1 VALUE "Ville: ".
@@ -198,9 +198,9 @@
            MOVE "ARL" TO ETAT-PILOTE. 
            IF WS-CHOIX = "y"
       *        PERFORM APPLY-CRE-PILOTE
-               MOVE "Pilote crÃ©Ã©" to WS-MSG
+               MOVE "Pilote créé" to WS-MSG
            ELSE
-               MOVE "Pilote non crÃ©Ã©" to WS-MSG
+               MOVE "Pilote non créé" to WS-MSG
            END-IF.
            MOVE SPACES TO WS-CHOIX.
            PERFORM REFRESH.
@@ -211,7 +211,7 @@
        MAJ-PILOTE.
            PERFORM NEW-SCREEN.
            MOVE "Modifier un pilote" TO WS-FUNC.
-           MOVE "Numero du pilote Ã  modifier" TO WS-MSG.
+           MOVE "Numero du pilote à modifier" TO WS-MSG.
            PERFORM REFRESH.
            
            ACCEPT NUM-PILOTE-MAJ LINE 22 COL 10.
@@ -223,9 +223,9 @@
 
            IF WS-CHOIX = "y"
       *        PERFORM APPLY-MAJ-PILOTE
-               MOVE "Pilote modifiÃ©" to WS-MSG
+               MOVE "Pilote modifié" to WS-MSG
            ELSE
-               MOVE "Pilote non modifiÃ©" to WS-MSG
+               MOVE "Pilote non modifié" to WS-MSG
            END-IF.
            
            MOVE SPACES TO WS-CHOIX.
@@ -237,7 +237,7 @@
        DEL-PILOTE.
            DISPLAY CLRSCREEN.     
            MOVE "Supprimer un pilote" to WS-FUNC
-           MOVE "Pilote Ã  supprimer:" to WS-MSG.
+           MOVE "Pilote à supprimer:" to WS-MSG.
            DISPLAY SS-STDSCREEN.
            ACCEPT DEL-PILOTE-MAJ LINE 22 COL 10.
            PERFORM MENU.

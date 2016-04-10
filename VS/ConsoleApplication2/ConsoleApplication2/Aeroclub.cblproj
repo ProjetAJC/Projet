@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{445A1236-6958-4EA9-9D56-A1D94A8C1C8C}</ProjectGuid>
+    <OutputName>ApplicationAeroclub</OutputName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApplication2</RootNamespace>
+    <MFProjectType>Native</MFProjectType>
+    <StartupObject>Main.cbl</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>.\bin\x86\Debug\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <ManagedCode>False</ManagedCode>
+    <DebugSymbols>True</DebugSymbols>
+    <MaxError>100</MaxError>
+    <WarningLevel>0</WarningLevel>
+    <NativeGraphicalApplication>True</NativeGraphicalApplication>
+    <NativeLinkEntryPoint>MAIN</NativeLinkEntryPoint>
+    <NativeLinkOutputName>Aeroclub</NativeLinkOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>.\bin\x86\Release\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <ManagedCode>False</ManagedCode>
+    <DebugSymbols>False</DebugSymbols>
+    <MaxError>100</MaxError>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cbl" />
+    <Compile Include="F4.cbl" />
+    <Compile Include="F5.cbl" />
+    <Compile Include="F6.cbl" />
+    <Compile Include="F7.cbl" />
+    <Compile Include="F2.cbl" />
+    <Compile Include="F1.cbl" />
+    <Compile Include="F0.cbl" />
+    <Compile Include="F3.cbl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TEMPLATE\PROC-TEMPLATE.cpy" />
+    <None Include="TEMPLATE\SCREEN-TEMPLATE.cpy" />
+    <None Include="TEMPLATE\WS-TEMPLATE.cpy" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Micro Focus\Visual COBOL\v1.0\MicroFocus.COBOL.targets" />
+</Project>
