@@ -21,7 +21,7 @@
       *    77 WS-CHOIX PIC X(20) VALUE SPACES.
        
            01 WS-CHOIX PIC X.
-               88 WS-CHOIX-MENU VALUE "1", "2", "3", "4", "5".
+               88 WS-CHOIX-MENU VALUE "1", "2", "3", "4", "5", "6".
                88 WS-QUITTER VALUE "Q", "q".
                88 WS-VALIDER VALUE "Y", "y", "O", "o".
                88 WS-ANNULER VALUE "N", "n".
@@ -72,9 +72,9 @@
            77  LS_QUIT         PIC 9.
         
        SCREEN SECTION.
-	       01 CLRSCREEN BLANK SCREEN.
-	       01 STDSCREEN BACKGROUND-COLOR 0 FOREGROUND-COLOR 2.
-		        02 LINE 1 COL 1 VALUE "A".
+      *    01 CLRSCREEN BLANK SCREEN.
+      *    01 STDSCREEN BACKGROUND-COLOR 0 FOREGROUND-COLOR 2.
+      *         02 LINE 1 COL 1 VALUE "A".
            
            01 DS-MENU.
                02 LINE 9  COL 5 "1. Afficher la liste des pilotes".
@@ -136,17 +136,17 @@
       *    MOVE 1 TO NUMPIL-PILOTE.
       *    MOVE 'adresse' TO ADRESSE-PILOTE.
        
-       NEW-SCREEN.
-           PERFORM CLEAR-MSGS.
-           DISPLAY CLRSCREEN.
-           DISPLAY SS-STDSCREEN.
-       
-       REFRESH.
-           PERFORM DISPLAY SS-STDSCREEN.
-       
-       CLEAR-MSGS.
-           MOVE SPACES TO WS-MSG.
-           MOVE SPACES TO WS-INVITE.
+      *NEW-SCREEN.
+      *    PERFORM CLEAR-MSGS.
+      *    DISPLAY CLRSCREEN.
+      *    DISPLAY SS-STDSCREEN.
+      *
+      *REFRESH.
+      *    PERFORM DISPLAY SS-STDSCREEN.
+      *
+      *CLEAR-MSGS.
+      *    MOVE SPACES TO WS-MSG.
+      *    MOVE SPACES TO WS-INVITE.
        
        
        BACK-OR-QUIT.
@@ -176,6 +176,10 @@
 			            PERFORM MAJ-PILOTE
 		              WHEN "4"
 			            PERFORM DEL-PILOTE
+                      WHEN "5"
+                        EXIT PROGRAM
+                      WHEN "6"
+                        STOP RUN
 		              WHEN OTHER 
 			            PERFORM MENU
 	               END-EVALUATE

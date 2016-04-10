@@ -22,17 +22,28 @@
                     10  WS_CURR_MS      PIC  9(2).
                 05  WS_DIFF_FROM_GMT    PIC S9(4).
             77  WS_FUNC     PIC X(25)   VALUE "MENU PRINCIPAL".
-            77  WS_LINE     PIC X(80)   VALUE "______________________".
-            77  WS_MTITLE   PIC X(80)   VALUE "Veuillez choiivantes : ".
-            77  WS_MENUF0   PIC X(80)   VALUE "    0 - Lista revisers.".
-            77  WS_MENUF1   PIC X(80)   VALUE "    1 - Depot de vol.".
-            77  WS_MENUF2   PIC X(80)   VALUE "    2 - Enregis'un vol.".
-            77  WS_MENUF3   PIC X(80)   VALUE "    3 - Mise-a-pilotes.".
-            77  WS_MENUF4   PIC X(80)   VALUE "    4 - Mise-a-vions.".
-            77  WS_MENUF5   PIC X(80)   VALUE "    5 - Recapit avions.".
-            77  WS_MENUF6   PIC X(80)   VALUE "    6 - Recapi pilotes.".
-            77  WS_MENUF7   PIC X(80)   VALUE "    7 - Facturation de ".                
-            77  WS_MQUIT    PIC X(80)   VALUE "    Q - Quitter l'appl ".     
+           
+            77  WS_LINE     PIC X(80)   VALUE ALL "_".
+            77  WS_MTITLE   PIC X(80)   
+           VALUE "Veuillez choisir parmis les options suivantes : ".
+            77  WS_MENUF0   PIC X(80)   
+         VALUE "    0 - Liste des avions a reviser et pilotes malades.".
+            77  WS_MENUF1   PIC X(80)  
+           VALUE "    1 - Depot d'un plan de vol.".
+            77  WS_MENUF2   PIC X(80)   
+           VALUE "    2 - Enregistrement d'un vol.".
+            77  WS_MENUF3   PIC X(80)   
+           VALUE "    3 - Mise-a-jour des pilotes.".
+            77  WS_MENUF4   PIC X(80)   
+           VALUE "    4 - Mise-a-jour des avions.".
+            77  WS_MENUF5   PIC X(80)   
+           VALUE "    5 - Recapitulatif des avions.".
+            77  WS_MENUF6   PIC X(80)   
+           VALUE "    6 - Recapitulatif des pilotes.".
+            77  WS_MENUF7   PIC X(80)   
+           VALUE "    7 - Facturation des vols aux pilotes.".
+            77  WS_MQUIT    PIC X(80)  
+            VALUE "    Q - Quitter l'application.".   
             77  WS_MSG      PIC X(50)   VALUE SPACES.
             77  WS_INVITE   PIC X(50)   VALUE SPACES.
             77  WS_CHOICE   PIC X       VALUE SPACES.
