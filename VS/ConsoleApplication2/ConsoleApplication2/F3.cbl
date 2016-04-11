@@ -127,9 +127,10 @@
            COPY "SCREEN-TEMPLATE.cpy" IN TEMPLATE.
 		
        PROCEDURE DIVISION USING LS_QUIT.
+       
+
        DEBUT.
-           COPY "PROC-TEMPLATE.cpy" IN TEMPLATE.
-           PERFORM NEW-SCREEN.
+           MOVE FUNCTION CURRENT-DATE TO WS-CURR-DATE-FIELDS.
            PERFORM MENU.
       *    MOVE 'prenom' TO PRENOM-PILOTE.
       *    MOVE 'nom' TO NOM-PILOTE.
@@ -148,7 +149,8 @@
       *    MOVE SPACES TO WS-MSG.
       *    MOVE SPACES TO WS-INVITE.
        
-       
+       COPY "PROC-TEMPLATE.cpy" IN TEMPLATE.
+
        BACK-OR-QUIT.
            MOVE "Retourner au Menu ou Quitter" TO WS-INVITE.
            PERFORM REFRESH.

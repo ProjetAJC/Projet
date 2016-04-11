@@ -94,8 +94,7 @@
 		
        PROCEDURE DIVISION USING LS_QUIT.
        DEBUT.
-           COPY "PROC-TEMPLATE.cpy" IN TEMPLATE.
-           PERFORM NEW-SCREEN.
+           MOVE FUNCTION CURRENT-DATE TO WS-CURR-DATE-FIELDS.
            PERFORM MENU.
       *    MOVE 'prenom' TO PRENOM-AVION.
       *    MOVE 'nom' TO NOM-AVION.
@@ -114,7 +113,8 @@
       *    MOVE SPACES TO WS-MSG.
       *    MOVE SPACES TO WS-INVITE.
        
-       
+       COPY "PROC-TEMPLATE.cpy" IN TEMPLATE.
+
        BACK-OR-QUIT.
            MOVE "Retourner au Menu ou Quitter (Q)" TO WS-INVITE.
            PERFORM REFRESH.

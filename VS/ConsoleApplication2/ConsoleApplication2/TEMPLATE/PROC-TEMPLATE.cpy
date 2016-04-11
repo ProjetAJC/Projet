@@ -1,5 +1,4 @@
       * PROC-TEMPLATE 
-       MOVE FUNCTION CURRENT-DATE TO WS-CURR-DATE-FIELDS.
        
        NEW-SCREEN.
            PERFORM CLEAR-MSGS.
@@ -7,7 +6,7 @@
            DISPLAY SS-STDSCREEN.
        
        REFRESH.
-           PERFORM DISPLAY SS-STDSCREEN.
+           DISPLAY SS-STDSCREEN.
        
        CLEAR-MSGS.
            MOVE SPACES TO WS-MSG.

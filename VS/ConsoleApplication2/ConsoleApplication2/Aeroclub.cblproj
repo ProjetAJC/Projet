@@ -17,8 +17,7 @@
     <DebugSymbols>True</DebugSymbols>
     <MaxError>100</MaxError>
     <WarningLevel>0</WarningLevel>
-    <NativeGraphicalApplication>True</NativeGraphicalApplication>
-    <NativeLinkEntryPoint>MAIN</NativeLinkEntryPoint>
+    <NativeLinkEntryPoint>F3</NativeLinkEntryPoint>
     <NativeLinkOutputName>Aeroclub</NativeLinkOutputName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">

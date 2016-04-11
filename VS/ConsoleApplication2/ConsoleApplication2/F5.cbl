@@ -85,6 +85,10 @@
                 02 LINE K COL 15 FROM CUR-PRENOM-PILOTE.
         
        PROCEDURE DIVISION.
+       DEBUT.
+           MOVE FUNCTION CURRENT-DATE TO WS-CURR-DATE-FIELDS.
+           AFFICHE-FACTURE.
+       
        COPY "PROC-TEMPLATE.cpy" IN TEMPLATE.
         
        AFFICHE-FACTURE.
