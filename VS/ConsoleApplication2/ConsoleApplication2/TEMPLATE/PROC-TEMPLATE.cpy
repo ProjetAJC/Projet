@@ -1,12 +1,22 @@
       * PROC-TEMPLATE 
        
-       NEW-SCREEN.
+       NEW-SCREEN2.
            PERFORM CLEAR-MSGS.
            DISPLAY CLRSCREEN.
            DISPLAY SS-STDSCREEN.
        
+       NEW-SCREEN.
+           PERFORM CLEAR-MSGS.
+           PERFORM REFRESH.
+           
        REFRESH.
-           DISPLAY SS-STDSCREEN.
+           DISPLAY CLRSCREEN.
+           DISPLAY BANNIERE.
+           DISPLAY AVIONG.
+           DISPLAY AVIOND.
+           DISPLAY CADRE.
+           DISPLAY INSIDE-BANNIERE.
+           DISPLAY FOOTER.
        
        CLEAR-MSGS.
            MOVE SPACES TO WS-MSG.

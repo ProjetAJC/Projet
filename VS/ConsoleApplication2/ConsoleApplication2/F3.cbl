@@ -83,23 +83,23 @@
                02 LINE 12 COL 5 "4. Supprimer un pilote".
                02 LINE 13 COL 5 "5. Revenir au menu principal".
                02 LINE 14 COL 5 "6. Quitter le programme".
-          
+               02 LINE 16 COL 5 PIC X TO WS-CHOIX.
 
            01 SS-CRE-PILOTE.
-               02 LINE 7  COL 1 VALUE "Nom: ".
-               02 LINE 8  COL 1 VALUE "Prénom: ".
-               02 LINE 9  COL 1 VALUE "Adresse: ".
-               02 LINE 10 COL 1 VALUE "CP: ".
-               02 LINE 11 COL 1 VALUE "Ville: ".
-               02 LINE 12 COL 1 VALUE "Pays: ".
-               02 LINE 13 COL 1 VALUE "Compteur de vol: ".
+               02 LINE 7  COL 3 VALUE "Nom: ".
+               02 LINE 8  COL 3 VALUE "Prénom: ".
+               02 LINE 9  COL 3 VALUE "Adresse: ".
+               02 LINE 10 COL 3 VALUE "CP: ".
+               02 LINE 11 COL 3 VALUE "Ville: ".
+               02 LINE 12 COL 3 VALUE "Pays: ".
+               02 LINE 13 COL 3 VALUE "Compteur de vol: ".
       *        02 LINE 14 COL 1 "Brevet: ".
-               02 LINE 16 COL 1 VALUE "Valider ? (y/n)".
+               02 LINE 16 COL 3 VALUE "Valider ? (y/n)".
            
            01 AS-CRE-PILOTE REQUIRED UNDERLINE.
                02 LINE 7  COL 20 PIC X(20) TO NOM-PILOTE.
                02 LINE 8  COL 20 PIC X(10) TO PRENOM-PILOTE.
-               02 LINE 9  COL  20 PIC X(50) TO ADRESSE-PILOTE.
+               02 LINE 9  COL 20 PIC X(50) TO ADRESSE-PILOTE.
                02 LINE 10 COL 20 PIC 9(5)  TO CP-PILOTE.
                02 LINE 11 COL 20 PIC X(50) TO VILLE-PILOTE.
                02 LINE 12 COL 20 PIC X(50) TO PAYS-PILOTE.
@@ -107,13 +107,13 @@
                02 LINE 16 COL 20 PIC X     TO WS-CHOIX.
            
            01 DS-MAJ-PILOTE.
-               02 LINE 7  COL 1 FROM "Nom: ".
-               02 LINE 8  COL 1 "Prénom: ".
-               02 LINE 9  COL 1 "Adresse: ".
-               02 LINE 10 COL 1 VALUE "CP: ".
-               02 LINE 11 COL 1 VALUE "Ville: ".
-               02 LINE 12 COL 1 VALUE "Pays: ".
-               02 LINE 16 COL 1 VALUE "Valider ? (y/n)".
+               02 LINE 7  COL 3 FROM "Nom: ".
+               02 LINE 8  COL 3 "Prénom: ".
+               02 LINE 9  COL 3 "Adresse: ".
+               02 LINE 10 COL 3 VALUE "CP: ".
+               02 LINE 11 COL 3 VALUE "Ville: ".
+               02 LINE 12 COL 3 VALUE "Pays: ".
+               02 LINE 16 COL 3 VALUE "Valider ? (y/n)".
 
            01 AS-MAJ-PILOTE  REQUIRED UNDERLINE.
                02 LINE 7  COL 20 USING NOM-PILOTE.
@@ -163,11 +163,14 @@
            
        
        MENU.
+           MOVE "Menu" TO WS-FUNC.
            PERFORM NEW-SCREEN.
            DISPLAY DS-MENU.
+           ACCEPT DS-MENU.
            PERFORM UNTIL WS-RETRY = 0
-               DISPLAY SS-STDSCREEN
-               ACCEPT SS-STDSCREEN
+      *        DISPLAY SS-STDSCREEN
+      *        ACCEPT SS-STDSCREEN
+      *        ACCEPT WS-CHOIX.
                IF WS-CHOIX-MENU OR WS-QUITTER
 	               EVALUATE WS-CHOIX
 	                  WHEN "1"
@@ -271,3 +274,4 @@
        APPLY-DEL-PILOTE.
       *    sql command
 
+       END PROGRAM F3.

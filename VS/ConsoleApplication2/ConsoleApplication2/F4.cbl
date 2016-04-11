@@ -21,7 +21,7 @@
       *    77 WS-CHOIX PIC X(20) VALUE SPACES.
        
            01 WS-CHOIX PIC X.
-               88 WS-CHOIX-MENU VALUE "1", "2", "3", "4", "5".
+               88 WS-CHOIX-MENU VALUE "1", "2", "3", "4", "5", "6".
                88 WS-QUITTER VALUE "Q", "q".
                88 WS-VALIDER VALUE "Y", "y", "O", "o".
                88 WS-ANNULER VALUE "N", "n".
@@ -64,26 +64,27 @@
                02 LINE 12 COL 5 "4. Supprimer un avion".
                02 LINE 13 COL 5 "5. Revenir au menu principal".
                02 LINE 14 COL 5 "6. Quitter le programme".
-          
+               02 LINE 16 COL 5 PIC X TO WS-CHOIX.
+  
 
            01 DS-CRE-AVION.
       *        02 LINE 7  COL 1 VALUE "Code: ".
-               02 LINE 8  COL 1 VALUE "Compteur horaire: ".
-               02 LINE 9  COL 1 VALUE "Infos: ".
-               02 LINE 10 COL 1 VALUE "Type de l'avion: ".
-               02 LINE 12 COL 1 VALUE "Valider ? (y/n)".
+               02 LINE 8  COL 3 VALUE "Compteur horaire: ".
+               02 LINE 9  COL 3 VALUE "Infos: ".
+               02 LINE 10 COL 3 VALUE "Type de l'avion: ".
+               02 LINE 12 COL 3 VALUE "Valider ? (y/n)".
            
            01 AS-CRE-AVION REQUIRED UNDERLINE.
       *        02 LINE 7  COL 20 PIC 9(6) TO CODAV.
                02 LINE 8  COL 20 PIC 9(6) TO CPTHORAV.
-               02 LINE 9 COL 20 PIC X(50)  TO INFOS.
+               02 LINE 9  COL 20 PIC X(50)  TO INFOS.
                02 LINE 10 COL 20 PIC XX TO CODTYP.
                02 LINE 12 COL 20 PIC X     TO WS-CHOIX.
            
            01 DS-MAJ-AVION.
-               02 LINE 7  COL 1 FROM "Code de l'avion: ".
-               02 LINE 8  COL 1 "Infos: ".
-               02 LINE 10 COL 1 VALUE "Valider ? (y/n)".
+               02 LINE 7  COL 3 FROM "Code de l'avion: ".
+               02 LINE 8  COL 3 "Infos: ".
+               02 LINE 10 COL 3 VALUE "Valider ? (y/n)".
 
            01 AS-MAJ-AVION  REQUIRED UNDERLINE.
                02 LINE 7  COL 20 FROM CODAV.
@@ -116,7 +117,7 @@
        COPY "PROC-TEMPLATE.cpy" IN TEMPLATE.
 
        BACK-OR-QUIT.
-           MOVE "Retourner au Menu ou Quitter (Q)" TO WS-INVITE.
+           MOVE "ReTOurner au Menu ou Quitter (Q)" TO WS-INVITE.
            PERFORM REFRESH.
            ACCEPT WS-CHOIX.
            IF WS-QUITTER
@@ -127,11 +128,14 @@
            
        
        MENU.
+           MOVE "Menu" TO WS-FUNC.
            PERFORM NEW-SCREEN.
-           DISPLAY DS-MENU.
            PERFORM UNTIL WS-RETRY = 0
-               DISPLAY SS-STDSCREEN
-               ACCEPT SS-STDSCREEN
+               PERFORM REFRESH
+               DISPLAY DS-MENU
+               ACCEPT DS-MENU
+      *        DISPLAY SS-STDSCREEN
+      *        ACCEPT SS-STDSCREEN
                IF WS-CHOIX-MENU OR WS-QUITTER
 	               EVALUATE WS-CHOIX
 	                  WHEN "1"
@@ -142,15 +146,20 @@
 			            PERFORM MAJ-AVION
 		              WHEN "4"
 			            PERFORM DEL-AVION
+                      WHEN "5"
+			            EXIT PROGRAM
+                      WHEN "6"
+                        STOP RUN
 		              WHEN OTHER 
 			            PERFORM MENU
 	               END-EVALUATE
                    MOVE "" TO WS-CHOIX
                ELSE
                    SUBTRACT 1 FROM WS-RETRY
-                   MOVE "Choix non valide !" TO WS-MSG
+                   MOVE "Choix non valide ! " TO WS-MSG
                END-IF
            END-PERFORM.
+           STOP RUN.
 	
        LISTE-AVION.
            STOP RUN.
@@ -164,9 +173,9 @@
            ACCEPT AS-CRE-AVION.
            IF WS-CHOIX = "y"
       *        PERFORM APPLY-CRE-AVION
-               MOVE "Avion créé" to WS-MSG
+               MOVE "Avion créé" TO WS-MSG
            ELSE
-               MOVE "Avion non créé" to WS-MSG
+               MOVE "Avion non créé" TO WS-MSG
            END-IF.
            MOVE SPACES TO WS-CHOIX.
            PERFORM REFRESH.
@@ -189,9 +198,9 @@
 
            IF WS-CHOIX = "y"
       *        PERFORM APPLY-MAJ-AVION
-               MOVE "Avion modifié" to WS-MSG
+               MOVE "Avion modifié" TO WS-MSG
            ELSE
-               MOVE "Avion non modifié" to WS-MSG
+               MOVE "Avion non modifié" TO WS-MSG
            END-IF.
            
            MOVE SPACES TO WS-CHOIX.
@@ -201,10 +210,10 @@
 
   
        DEL-AVION.
-           DISPLAY CLRSCREEN.     
-           MOVE "Supprimer un avion" to WS-FUNC
-           MOVE "Avion à supprimer:" to WS-MSG.
-           DISPLAY SS-STDSCREEN.
+           PERFORM NEW-SCREEN.
+           MOVE "Supprimer un avion" TO WS-FUNC
+           MOVE "Avion à supprimer:" TO WS-MSG.
+           PERFORM REFRESH.
            ACCEPT DEL-AVION-MAJ LINE 22 COL 10.
            PERFORM MENU.
     

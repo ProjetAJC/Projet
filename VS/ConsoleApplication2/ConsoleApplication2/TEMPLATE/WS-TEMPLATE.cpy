@@ -13,3 +13,4 @@
 
        77  WS-CONTINUE PIC 9.
        77  WSOULIGNE   PIC X(80)   VALUE ALL "-".
+       77  TIRETS      PIC X(80)  VALUE ALL "-".
