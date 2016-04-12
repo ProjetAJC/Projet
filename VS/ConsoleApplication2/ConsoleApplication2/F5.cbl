@@ -4,6 +4,14 @@
        DATA DIVISION.
            WORKING-STORAGE SECTION.
            COPY "WS-TEMPLATE.cpy" IN TEMPLATE.
+           
+           01 WS-CHOIX PIC X.
+               88 WS-CHOIX-MENU VALUE "1".
+               88 WS-BACK VALUE "M", "m".
+               88 WS-QUITTER VALUE "Q", "q".
+               88 WS-VALIDER VALUE "Y", "y", "O", "o".
+               88 WS-ANNULER VALUE "N", "n".
+           
 	        01 FVOL.
 	          02 VOL OCCURS 0 TO 99 TIMES DEPENDING ON NB-VOL.
 		        03 NUMVOL PIC 9(6).
@@ -50,7 +58,7 @@
             77 WS-FUNC PIC X(20) VALUE "F7".
             77 WS-MSG PIC X(60).
             77 WS-INVITE PIC X(60).
-            77 WS-CHOIX PIC X(20).
+      *     77 WS-CHOIX PIC X(20).
 	        77 NB-DE-PILOTE PIC 99.
             77 NB-VOL PIC 99.
             77 NB-PAGE PIC 99.
@@ -63,10 +71,18 @@
             77 K PIC 9(3).
             77 TARIF PIC 9(3) VALUE 15.
             77 N-AVION PIC 9.
-	
+	        77 WS-RETRY PIC 9 VALUE 3.
+
 	
            SCREEN SECTION.
            COPY "SCREEN-TEMPLATE.cpy" IN TEMPLATE.
+           
+           01 DS-MENU.
+               02 LINE 9  COL 5 "1. Afficher facture".
+               02 LINE 13 COL 5 "M. Revenir au menu principal".
+               02 LINE 14 COL 5 "Q. Quitter le programme".
+               02 LINE 16 COL 5 PIC X TO WS-CHOIX.
+           
             01 RECAP.
                 02 PIC X(30) FROM "Période du " LINE 7 COL 10.
             01 TABLEAU.
@@ -87,7 +103,7 @@
        PROCEDURE DIVISION.
        DEBUT.
            MOVE FUNCTION CURRENT-DATE TO WS-CURR-DATE-FIELDS.
-           AFFICHE-FACTURE.
+           PERFORM MENU.
        
        COPY "PROC-TEMPLATE.cpy" IN TEMPLATE.
        
@@ -98,7 +114,34 @@
       * sql command quand on recupere les lignes a afficher
       * correspondant aux bonnes periodes
        
-        
+       MENU.
+           MOVE "Menu" TO WS-FUNC.
+           PERFORM NEW-SCREEN.
+           PERFORM UNTIL WS-RETRY = 0
+               PERFORM REFRESH
+               DISPLAY DS-MENU
+               ACCEPT DS-MENU
+      *        DISPLAY SS-STDSCREEN
+      *        ACCEPT SS-STDSCREEN
+               IF WS-CHOIX-MENU OR WS-QUITTER OR WS-BACK
+	               EVALUATE WS-CHOIX
+	                  WHEN "1"
+			            PERFORM AFFICHE-FACTURE
+                      WHEN "M"
+			            EXIT PROGRAM
+                      WHEN "Q"
+                        STOP RUN
+		              WHEN OTHER 
+			            PERFORM MENU
+	               END-EVALUATE
+                   MOVE "" TO WS-CHOIX
+               ELSE
+                   SUBTRACT 1 FROM WS-RETRY
+                   MOVE "Choix non valide ! " TO WS-MSG
+               END-IF
+           END-PERFORM.
+           STOP RUN.
+       
        AFFICHE-FACTURE.
            MOVE "n(page suivante), p(page précédente), v(payer)" 
            TO WS-INVITE.
@@ -244,6 +287,8 @@
                            SUBTRACT 1 FROM NUM-CUR-PILOTE
                            MOVE "pilote precedent" to WS-MSG
 			       END-IF
+               WHEN 'M'
+                   PERFORM MENU
                END-EVALUATE
            END-PERFORM
 	
