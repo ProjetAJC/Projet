@@ -1,3 +1,0 @@
-C:\Users\jerem\OneDrive\Documents\GitHub\Projet\VS\ConsoleApplication2\ConsoleApplication2\obj\x86\Debug\ConsoleApplication2.cblprojResolveAssemblyReference.cache
-C:\Users\jerem\OneDrive\Documents\GitHub\Projet\VS\ConsoleApplication2\ConsoleApplication2\bin\x86\Debug\Aeroclub.exe
-C:\Users\jerem\OneDrive\Documents\GitHub\Projet\VS\ConsoleApplication2\ConsoleApplication2\obj\x86\Debug\Aeroclub.exe

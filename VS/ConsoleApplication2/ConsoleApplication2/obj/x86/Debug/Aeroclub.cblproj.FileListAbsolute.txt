@@ -1,9 +1,0 @@
-C:\Users\jerem\OneDrive\Documents\GitHub\Projet\VS\ConsoleApplication2\ConsoleApplication2\bin\x86\Debug\Aeroclub.exe
-C:\Users\jerem\OneDrive\Documents\GitHub\Projet\VS\ConsoleApplication2\ConsoleApplication2\obj\x86\Debug\Aeroclub.cblprojResolveAssemblyReference.cache
-C:\Users\jerem\OneDrive\Documents\GitHub\Projet\VS\ConsoleApplication2\ConsoleApplication2\obj\x86\Debug\Aeroclub.exe
-C:\Users\ajc\Documents\GitHub\Projet\VS\ConsoleApplication2\ConsoleApplication2\bin\x86\Debug\Aeroclub.exe
-C:\Users\ajc\Documents\GitHub\Projet\VS\ConsoleApplication2\ConsoleApplication2\obj\x86\Debug\Aeroclub.cblprojResolveAssemblyReference.cache
-C:\Users\ajc\Documents\GitHub\Projet\VS\ConsoleApplication2\ConsoleApplication2\obj\x86\Debug\Aeroclub.exe
-C:\Users\ajc\Documents\Projet\VS\ConsoleApplication2\ConsoleApplication2\bin\x86\Debug\Aeroclub.exe
-C:\Users\ajc\Documents\Projet\VS\ConsoleApplication2\ConsoleApplication2\obj\x86\Debug\Aeroclub.cblprojResolveAssemblyReference.cache
-C:\Users\ajc\Documents\Projet\VS\ConsoleApplication2\ConsoleApplication2\obj\x86\Debug\Aeroclub.exe
