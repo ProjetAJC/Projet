@@ -34,3 +34,21 @@ MFCBT_Directives=int"obj\x86\Debug\F3.int" anim cobidy".\bin\x86\Debug\" sourcet
 MFCBT_Directives=int"obj\x86\Debug\F6.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
 ^C:\USERS\AJC\DOCUMENTS\GITHUB\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\F7.CBL
 MFCBT_Directives=int"obj\x86\Debug\F7.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\MAIN.CBL
+MFCBT_Directives=int"obj\x86\Debug\Main.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\F4.CBL
+MFCBT_Directives=int"obj\x86\Debug\F4.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\F5.CBL
+MFCBT_Directives=int"obj\x86\Debug\F5.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\F6.CBL
+MFCBT_Directives=int"obj\x86\Debug\F6.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\F7.CBL
+MFCBT_Directives=int"obj\x86\Debug\F7.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\F2.CBL
+MFCBT_Directives=int"obj\x86\Debug\F2.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\F1.CBL
+MFCBT_Directives=int"obj\x86\Debug\F1.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\F0.CBL
+MFCBT_Directives=int"obj\x86\Debug\F0.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\F3.CBL
+MFCBT_Directives=int"obj\x86\Debug\F3.int" anim cobidy".\bin\x86\Debug\" sourcetabstop"4" noquery osext() nowarning max-error"100" . MFCBT_CopyPaths=

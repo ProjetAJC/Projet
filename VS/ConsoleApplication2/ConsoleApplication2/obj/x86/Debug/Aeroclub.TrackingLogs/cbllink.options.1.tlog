@@ -2,3 +2,5 @@
 MFCBT_Options=-Oobj\x86\Debug\Aeroclub.exe -M"MAIN" -N -FM obj\x86\Debug\Main.obj . MFCBT_Objs=obj\x86\Debug\F4.obj obj\x86\Debug\F5.obj obj\x86\Debug\F6.obj obj\x86\Debug\F7.obj obj\x86\Debug\F2.obj obj\x86\Debug\F1.obj obj\x86\Debug\F0.obj obj\x86\Debug\F3.obj 
 ^C:\USERS\AJC\DOCUMENTS\GITHUB\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\OBJ\X86\DEBUG\MAIN.OBJ
 MFCBT_Options=-Oobj\x86\Debug\Aeroclub.exe -M"MAIN" -N -FM obj\x86\Debug\Main.obj . MFCBT_Objs=obj\x86\Debug\F4.obj obj\x86\Debug\F5.obj obj\x86\Debug\F6.obj obj\x86\Debug\F7.obj obj\x86\Debug\F2.obj obj\x86\Debug\F1.obj obj\x86\Debug\F0.obj obj\x86\Debug\F3.obj 
+^C:\USERS\AJC\DOCUMENTS\PROJET\VS\CONSOLEAPPLICATION2\CONSOLEAPPLICATION2\OBJ\X86\DEBUG\MAIN.OBJ
+MFCBT_Options=-Oobj\x86\Debug\Aeroclub.exe -M"MAIN" -N -FM obj\x86\Debug\Main.obj . MFCBT_Objs=obj\x86\Debug\F4.obj obj\x86\Debug\F5.obj obj\x86\Debug\F6.obj obj\x86\Debug\F7.obj obj\x86\Debug\F2.obj obj\x86\Debug\F1.obj obj\x86\Debug\F0.obj obj\x86\Debug\F3.obj 
