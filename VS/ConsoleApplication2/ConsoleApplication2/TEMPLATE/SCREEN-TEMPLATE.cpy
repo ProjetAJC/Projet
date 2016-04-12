@@ -32,12 +32,12 @@
        02 LINE 5 COL 21 VALUE "   \-------------------------------/".
        
        01 INSIDE-BANNIERE.
-           02 LINE 3 COL 30 "AEROCLUB".
-           02 LINE 3 COL 40 FROM WS-CURR-DAY.
-           02 LINE 3 COL 43 FROM WS-CURR-MONTH.
-           02 LINE 3 COL 46 FROM WS-CURR-YEAR.
-           02 LINE 4 COL 30 FROM WS-APP.
-           02 LINE 4 COL 35 FROM WS-FUNC.
+           02 LINE 3 COL 26 VALUE "AEROCLUB".
+           02 LINE 3 COL 46 FROM WS-CURR-DAY.
+           02 LINE 3 COL 49 FROM WS-CURR-MONTH.
+           02 LINE 3 COL 52 FROM WS-CURR-YEAR.
+           02 LINE 3 COL 36 FROM WS-APP.
+           02 LINE 4 COL 26 FROM WS-FUNC.
 
        01 AVIONG.
            02 LINE 2 COL 3 VALUE "|  __/~~\_____/~~|".

@@ -19,5 +19,6 @@
            DISPLAY FOOTER.
        
        CLEAR-MSGS.
+           MOVE SPACES TO WS-CHOIX.
            MOVE SPACES TO WS-MSG.
            MOVE SPACES TO WS-INVITE.
