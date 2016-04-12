@@ -33,3 +33,4 @@ $RECYCLE.BIN/
 bin/
 obj/
 .vs/
+*.suo
