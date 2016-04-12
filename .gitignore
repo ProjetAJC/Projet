@@ -26,3 +26,9 @@ $RECYCLE.BIN/
 # Power Designer backup files
 *.cdb
 *.pdb
+
+# Visual Studios
+# =========================
+
+bin/
+obj/
